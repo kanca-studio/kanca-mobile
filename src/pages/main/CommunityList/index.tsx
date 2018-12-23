@@ -1,10 +1,10 @@
-import { Button } from "@ant-design/react-native"
-import React, { Component } from "react"
-import { Text, View } from "react-native"
-import { NavigationScreenProp } from "react-navigation"
+import { Button } from "@ant-design/react-native";
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+import { NavigationScreenProp } from "react-navigation";
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>;
 }
 
 export default class CommunityList extends Component<IProps> {
@@ -14,10 +14,18 @@ export default class CommunityList extends Component<IProps> {
         <Text>Community List</Text>
         <Button
           type="primary"
-          onPress={() => this.props.navigation.navigate("CommunityCreate")}>
+          onPress={() => this.props.navigation.navigate("CommunityCreate")}
+        >
           Go To Community Create
         </Button>
+
+        <Button
+          type="primary"
+          onPress={() => this.props.navigation.navigate("EventDetail")}
+        >
+          Go To Event Detail
+        </Button>
       </View>
-    )
+    );
   }
 }
