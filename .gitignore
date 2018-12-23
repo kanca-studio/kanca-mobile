@@ -8,3 +8,4 @@ npm-debug.*
 *.mobileprovision
 yarn-error.log
 .vscode
+.DS_Store
