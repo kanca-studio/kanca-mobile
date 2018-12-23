@@ -1,18 +1,24 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "build": "tsc --watch",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
   },
   "dependencies": {
+    "@ant-design/react-native": "^3.0.3",
     "expo": "^31.0.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-native": "^0.57.20",
+    "babel-preset-expo": "^5.0.0",
+    "typescript": "^3.2.2"
   },
   "private": true
 }
