@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import { Button } from '@ant-design/react-native'
-import { NavigationScreenProp } from 'react-navigation'
+import { Button } from "@ant-design/react-native"
+import React, { Component } from "react"
+import { Text, View } from "react-native"
+import { NavigationScreenProp } from "react-navigation"
 
-interface Props {
+interface IProps {
   navigation: NavigationScreenProp<any, any>
 }
 
-export default class CommunityList extends Component<Props> {
-  render() {
+export default class CommunityList extends Component<IProps> {
+  public render() {
     return (
       <View>
         <Text>Community List</Text>
         <Button
-          type='primary'
-          onPress={() => this.props.navigation.navigate('CommunityCreate')}>
+          type="primary"
+          onPress={() => this.props.navigation.navigate("CommunityCreate")}>
           Go To Community Create
         </Button>
       </View>

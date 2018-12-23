@@ -41,3 +41,5 @@ interface Event {
   name: string
   participants: Array<User>
 }
+
+declare module '*.png'

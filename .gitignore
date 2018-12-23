@@ -7,3 +7,5 @@ npm-debug.*
 *.key
 *.mobileprovision
 yarn-error.log
+.vscode
+.DS_Store
