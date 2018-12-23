@@ -30,7 +30,8 @@
     "node_modules",
     "jest.config.js",
     "src/App.js",
-    "App.js"
+    "App.js",
+    "src/babel.config.js"
   ],
   "compileOnSave": false
 }

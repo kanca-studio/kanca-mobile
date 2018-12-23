@@ -1,8 +1,8 @@
-import React from 'react'
-import AppRoutes from './routes'
+import React, { Component } from "react"
+import AppRoutes from "./routes"
 
-export default class App extends React.Component {
-  render() {
+export default class App extends Component {
+  public render() {
     return <AppRoutes />
   }
 }
