@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from '@ant-design/react-native'
+import AppRoutes from './routes'
 
 export default class App extends React.Component {
   render() {
-    return <Button type={'primary'}>Klik Dong!</Button>
+    return <AppRoutes />
   }
 }
