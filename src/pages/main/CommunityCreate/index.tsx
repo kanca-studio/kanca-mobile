@@ -7,7 +7,7 @@ interface Props {
   navigation: NavigationScreenProp<any, any>
 }
 
-export default class CommunityCreate extends Component<Props, any> {
+export default class CommunityCreate extends Component<Props> {
   render() {
     return (
       <View>
