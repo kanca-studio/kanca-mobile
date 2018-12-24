@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native"
 import constants from "../../../config/constants"
 
 export default () => (
-  <TouchableOpacity style={styles.container} onPress={() => alert("lala")}>
+  <TouchableOpacity style={styles.container}>
     <View style={styles.imageContainer}>
       <Image
         source={require("../../../../assets/FB.jpg")}
