@@ -11,12 +11,19 @@ interface IProps {
 export default class SplashScreen extends Component<IProps> {
   public componentDidMount() {
     // TODO: check login credentials
-    setTimeout(() => this.props.navigation.navigate("CommunityList"), 1000)
+    setTimeout(() => this.props.navigation.navigate("Welcome"), 1000)
   }
 
   public render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "white" }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "white",
+        }}
+      >
         <Image source={SplashImage} />
       </View>
     )
