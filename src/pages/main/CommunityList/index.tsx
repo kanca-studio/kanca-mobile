@@ -10,7 +10,7 @@ interface IProps {
 }
 
 interface IState {
-  communities: Array<Community>
+  communities: Array<ICommunity>
   isCommunitiesEmpty: boolean
 }
 
@@ -20,7 +20,7 @@ export default class CommunityList extends Component<IProps, IState> {
   }
 
   state = {
-    communities: [] as Array<Community>,
+    communities: [] as Array<ICommunity>,
     isCommunitiesEmpty: true
   }
 
