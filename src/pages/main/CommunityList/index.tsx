@@ -1,6 +1,6 @@
 import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
 import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation"
 import CommunityItem from "./CommunityItem"
 
@@ -10,6 +10,7 @@ interface IProps {
 
 interface IState {
   communities: Array<Community>
+  isCommunitiesEmpty: boolean
 }
 
 export default class CommunityList extends Component<IProps, IState> {
@@ -18,7 +19,8 @@ export default class CommunityList extends Component<IProps, IState> {
   }
 
   state = {
-    communities: [] as Array<Community>
+    communities: [] as Array<Community>,
+    isCommunitiesEmpty: true
   }
 
   public componentDidMount() {
@@ -28,7 +30,7 @@ export default class CommunityList extends Component<IProps, IState> {
   public render() {
     return (
       <View style={styles.container}>
-        {this.state.communities.length !== 0 ? (
+        {this.state.isCommunitiesEmpty ? (
           <View style={styles.isCommunityEmptyViewContainer}>
             <Text>You don't have any communities yet. Start one!</Text>
             <WhiteSpace />
@@ -40,8 +42,28 @@ export default class CommunityList extends Component<IProps, IState> {
             </Button>
           </View>
         ) : (
-          <CommunityItem />
+          <FlatList
+            data={["1", "2", "3"]}
+            renderItem={() => <CommunityItem />}
+            keyExtractor={(_item, index) => index.toString()}
+          />
         )}
+        {/* TODO: Remove when fetch data is implemented */}
+        <TouchableOpacity
+          onPress={() =>
+            this.setState({ isCommunitiesEmpty: !this.state.isCommunitiesEmpty })
+          }
+          style={{
+            backgroundColor: "rgb(31,144,230)",
+            padding: 10,
+            position: "absolute",
+            bottom: 20,
+            alignSelf: "center",
+            borderRadius: 5
+          }}
+        >
+          <Text style={{ color: "white" }}>Switch</Text>
+        </TouchableOpacity>
       </View>
     )
   }
