@@ -16,7 +16,7 @@ export default class Register extends Component<IProps> {
   public render() {
     return (
       <WingBlank style={styles.wrapper}>
-        <Text style={styles.title}>Enter Additional Info</Text>
+        <Text style={styles.title}>Additional Info</Text>
         <Text style={styles.description}>Let us know who you are</Text>
 
         <WhiteSpace size="xl" />
@@ -40,6 +40,7 @@ export default class Register extends Component<IProps> {
         <WhiteSpace size="xl" />
 
         <Button
+          style={styles.button}
           type="primary"
           onPress={() => this.props.navigation.navigate("CommunityList")}
         >
@@ -62,4 +63,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
   },
+  button: {
+    alignSelf: 'stretch'
+  }
 })
