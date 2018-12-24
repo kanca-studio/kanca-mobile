@@ -1,4 +1,4 @@
-interface User {
+interface IUser {
   city: string
   contact: string
   country: string
@@ -8,23 +8,23 @@ interface User {
   role: string
 }
 
-interface Coordinate {
+interface ICoordinate {
   _latitude: number
   _longitude: number
 }
 
-interface CommunityLocation {
+interface ICommunityLocation {
   city: string
   country: string
 }
 
-interface EventLocation {
+interface IEventLocation {
   address: string
   place_name: string
   coordinate: Coordinate
 }
 
-interface Community {
+interface ICommunity {
   banner: string
   creator: User
   description: string
@@ -33,7 +33,7 @@ interface Community {
   name: string
 }
 
-interface Event {
+interface IEvent {
   community: Community
   date: string
   description: string
@@ -42,4 +42,4 @@ interface Event {
   participants: Array<User>
 }
 
-declare module '*.png'
+declare module "*.png"
