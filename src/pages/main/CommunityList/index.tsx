@@ -1,5 +1,6 @@
 import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
+
 import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
 import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation"
 import CommunityItem from "./CommunityItem"
