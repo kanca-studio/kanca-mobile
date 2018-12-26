@@ -1,6 +1,6 @@
 import { Button } from "@ant-design/react-native"
 import React, { Component } from "react"
-import { Text, View, StyleSheet, Image } from "react-native"
+import { View, StyleSheet, Image } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 
