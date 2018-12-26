@@ -1,4 +1,4 @@
-import { Button } from "@ant-design/react-native"
+import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
 import { View, StyleSheet, Image } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
@@ -13,15 +13,17 @@ interface IProps {
 }
 
 export default class Login extends Component<IProps> {
+  public goto(page: string) {
+    this.props.navigation.navigate(page)
+  }
+
   public render() {
     return (
       <View style={styles.wrapper}>
         <Image source={Logo} resizeMode="contain" style={styles.logo} />
         <View style={styles.form}>
           <InputItem
-            icon={
-              <MaterialCommunityIcons name="email" size={32} />
-            }
+            icon={<MaterialCommunityIcons name="email" size={32} />}
             placeholder="Your email address"
           />
           <InputItem
@@ -29,7 +31,13 @@ export default class Login extends Component<IProps> {
             icon={<MaterialCommunityIcons name="lock" size={32} />}
             placeholder="Your password"
           />
-          <Button type="primary">Login</Button>
+          <Button type="primary" onPress={() => this.goto("CommunityList")}>
+            Login
+          </Button>
+          <WhiteSpace />
+          <Button type="ghost" onPress={() => this.goto("Register")}>
+            Register
+          </Button>
         </View>
       </View>
     )
