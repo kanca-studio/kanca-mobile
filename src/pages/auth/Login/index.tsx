@@ -13,11 +13,9 @@ interface IProps {
 }
 
 export default class Login extends Component<IProps> {
-  public goto(page: string) {
-    this.props.navigation.navigate(page)
-  }
 
   public render() {
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.wrapper}>
         <Image source={Logo} resizeMode="contain" style={styles.logo} />
@@ -31,11 +29,11 @@ export default class Login extends Component<IProps> {
             icon={<MaterialCommunityIcons name="lock" size={32} />}
             placeholder="Your password"
           />
-          <Button type="primary" onPress={() => this.goto("CommunityList")}>
+          <Button type="primary" onPress={() => navigate("CommunityList")}>
             Login
           </Button>
           <WhiteSpace />
-          <Button type="ghost" onPress={() => this.goto("Register")}>
+          <Button type="ghost" onPress={() => navigate("Register")}>
             Register
           </Button>
         </View>
