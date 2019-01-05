@@ -1,16 +1,16 @@
-import { Button, Carousel } from "@ant-design/react-native"
-import React, { Component } from "react"
-import { View } from "react-native"
-import { NavigationScreenProp } from "react-navigation"
-import CarouselItem from "./CarouselItem"
+import { Button, Carousel } from "@ant-design/react-native";
+import React, { Component } from "react";
+import { View } from "react-native";
+import { NavigationScreenProp } from "react-navigation";
+import CarouselItem from "./CarouselItem";
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>;
 }
 
 export default class Welcome extends Component<IProps> {
   public gotoLogin() {
-    this.props.navigation.navigate("Login")
+    this.props.navigation.navigate("Login");
   }
 
   public render() {
@@ -33,6 +33,6 @@ export default class Welcome extends Component<IProps> {
           </CarouselItem>
         </Carousel>
       </View>
-    )
+    );
   }
 }

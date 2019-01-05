@@ -1,28 +1,37 @@
-import { Button, WhiteSpace } from "@ant-design/react-native"
-import React, { Component } from "react"
+import { Button, WhiteSpace } from "@ant-design/react-native";
+import React, { Component } from "react";
 
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
-import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation"
-import CommunityItem from "./CommunityItem"
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity
+} from "react-native";
+import {
+  NavigationScreenProp,
+  NavigationStackScreenOptions
+} from "react-navigation";
+import CommunityItem from "./CommunityItem";
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>;
 }
 
 interface IState {
-  communities: Array<ICommunity>
-  isCommunitiesEmpty: boolean
+  communities: Array<ICommunity>;
+  isCommunitiesEmpty: boolean;
 }
 
 export default class CommunityList extends Component<IProps, IState> {
   static navigationOptions: NavigationStackScreenOptions = {
     title: "Your Communities"
-  }
+  };
 
   state = {
     communities: [] as Array<ICommunity>,
     isCommunitiesEmpty: true
-  }
+  };
 
   public componentDidMount() {
     //TODO: Fetch community list
@@ -52,7 +61,9 @@ export default class CommunityList extends Component<IProps, IState> {
         {/* TODO: Remove when fetch data is implemented */}
         <TouchableOpacity
           onPress={() =>
-            this.setState({ isCommunitiesEmpty: !this.state.isCommunitiesEmpty })
+            this.setState({
+              isCommunitiesEmpty: !this.state.isCommunitiesEmpty
+            })
           }
           style={{
             backgroundColor: "rgb(31,144,230)",
@@ -66,7 +77,7 @@ export default class CommunityList extends Component<IProps, IState> {
           <Text style={{ color: "white" }}>Switch</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
@@ -80,4 +91,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   }
-})
+});
