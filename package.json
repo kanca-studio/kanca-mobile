@@ -17,6 +17,7 @@
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {
+    "@types/expo__vector-icons": "^6.2.3",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/react-native": "^0.57.20",
