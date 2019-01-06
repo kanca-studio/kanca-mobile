@@ -1,8 +1,17 @@
 import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
 
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
-import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation"
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native"
+import {
+  NavigationScreenProp,
+  NavigationStackScreenOptions,
+} from "react-navigation"
 import CommunityItem from "./CommunityItem"
 
 interface IProps {
@@ -10,22 +19,22 @@ interface IProps {
 }
 
 interface IState {
-  communities: Array<ICommunity>
+  communities: ICommunity[]
   isCommunitiesEmpty: boolean
 }
 
 export default class CommunityList extends Component<IProps, IState> {
-  static navigationOptions: NavigationStackScreenOptions = {
-    title: "Your Communities"
+  public static navigationOptions: NavigationStackScreenOptions = {
+    title: "Your Communities",
   }
 
-  state = {
-    communities: [] as Array<ICommunity>,
-    isCommunitiesEmpty: true
+  public state = {
+    communities: [] as ICommunity[],
+    isCommunitiesEmpty: true,
   }
 
   public componentDidMount() {
-    //TODO: Fetch community list
+    // TODO: Fetch community list
   }
 
   public render() {
@@ -52,7 +61,9 @@ export default class CommunityList extends Component<IProps, IState> {
         {/* TODO: Remove when fetch data is implemented */}
         <TouchableOpacity
           onPress={() =>
-            this.setState({ isCommunitiesEmpty: !this.state.isCommunitiesEmpty })
+            this.setState({
+              isCommunitiesEmpty: !this.state.isCommunitiesEmpty,
+            })
           }
           style={{
             backgroundColor: "rgb(31,144,230)",
@@ -60,7 +71,7 @@ export default class CommunityList extends Component<IProps, IState> {
             position: "absolute",
             bottom: 20,
             alignSelf: "center",
-            borderRadius: 5
+            borderRadius: 5,
           }}
         >
           <Text style={{ color: "white" }}>Switch</Text>
@@ -72,12 +83,12 @@ export default class CommunityList extends Component<IProps, IState> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
 
   isCommunityEmptyViewContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 })

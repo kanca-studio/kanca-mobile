@@ -17,12 +17,14 @@ export const init = () => {
 export const login = async (
   email: string,
   password: string,
-): Promise<boolean> => {
+): Promise<firebase.auth.UserCredential> => {
   try {
-    await firebase.auth().signInWithEmailAndPassword(email, password)
-    return true
+    const userCredential = await firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+    return userCredential
   } catch (err) {
     Alert.alert("Error", err.message)
   }
-  return false
+  return null
 }
