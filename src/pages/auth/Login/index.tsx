@@ -1,8 +1,11 @@
 import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
-import { View, StyleSheet, Image } from "react-native"
+import { View, StyleSheet, Image, Alert } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
+import * as firebase from "firebase"
+
+import { login } from "../../../service/firebase"
 
 import Logo from "../../../../assets/logo.png"
 import constant from "../../../config/constants"
@@ -12,7 +15,28 @@ interface IProps {
   navigation: NavigationScreenProp<any, any>
 }
 
-export default class Login extends Component<IProps> {
+interface IState {
+  email: string
+  password: string
+  isLoggingIn: boolean
+}
+
+export default class Login extends Component<IProps, IState> {
+  public state = {
+    email: "",
+    password: "",
+    isLoggingIn: false,
+  }
+
+  public async onLoginPressed() {
+    this.setState({ isLoggingIn: true })
+    const { email, password } = this.state
+    const loginStatus = await login(email, password)
+    if (loginStatus) {
+      this.props.navigation.navigate("CommunityList")
+    }
+    const userToken = await firebase.auth().currentUser.getIdToken(true)
+  }
 
   public render() {
     const { navigate } = this.props.navigation
@@ -23,13 +47,15 @@ export default class Login extends Component<IProps> {
           <InputItem
             icon={<MaterialCommunityIcons name="email" size={32} />}
             placeholder="Your email address"
+            onChangeText={(value) => this.setState({ email: value })}
           />
           <InputItem
             secureTextEntry
             icon={<MaterialCommunityIcons name="lock" size={32} />}
             placeholder="Your password"
+            onChangeText={(value) => this.setState({ password: value })}
           />
-          <Button type="primary" onPress={() => navigate("CommunityList")}>
+          <Button type="primary" onPress={() => this.onLoginPressed()}>
             Login
           </Button>
           <WhiteSpace />
