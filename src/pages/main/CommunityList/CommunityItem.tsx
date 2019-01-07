@@ -19,9 +19,9 @@ export default () => (
         Malang, Jawa Timur
       </Text>
       <Text style={{ marginTop: 20, textAlign: "justify", fontSize: 13 }}>
-        Welcome! This is a forum for developers in Malang and its surroundings who are
-        interested in building on the Facebook platform to interact and collaborate other
-        developers who share similar interests.
+        Welcome! This is a forum for developers in Malang and its surroundings
+        who are interested in building on the Facebook platform to interact and
+        collaborate other developers who share similar interests.
       </Text>
     </View>
   </TouchableOpacity>
@@ -36,24 +36,24 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowRadius: 5,
     shadowOpacity: 1,
     elevation: 5,
     shadowColor: "grey",
     backgroundColor: "white",
-    minHeight: 250
+    minHeight: 250,
   },
   image: {
     width: constants.DEVICE_WIDTH * 0.95,
-    height: 200
+    height: 200,
   },
   imageContainer: {
     position: "absolute",
     top: 0,
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
-    overflow: "hidden"
-  }
+    overflow: "hidden",
+  },
 })

@@ -29,7 +29,7 @@ interface ICommunity {
   creator: User
   description: string
   location: CommunityLocation
-  members: Array<User>
+  members: User[]
   name: string
 }
 
@@ -39,7 +39,14 @@ interface IEvent {
   description: string
   location: EventLocation
   name: string
-  participants: Array<User>
+  participants: User[]
+}
+
+interface IUserContext {
+  token: string
+  setToken: Function
 }
 
 declare module "*.png"
+
+declare module "@expo/vector-icons"
