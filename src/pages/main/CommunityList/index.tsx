@@ -1,21 +1,21 @@
-import { Button, WhiteSpace } from "@ant-design/react-native"
-import React, { Component } from "react"
+import { Button, WhiteSpace } from "@ant-design/react-native";
+import React, { Component } from "react";
 
 import {
   Text,
   View,
   StyleSheet,
   FlatList,
-  TouchableOpacity,
-} from "react-native"
+  TouchableOpacity
+} from "react-native";
 import {
   NavigationScreenProp,
-  NavigationStackScreenOptions,
-} from "react-navigation"
-import CommunityItem from "./CommunityItem"
+  NavigationStackScreenOptions
+} from "react-navigation";
+import CommunityItem from "./CommunityItem";
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>;
 }
 
 interface IState {
@@ -77,7 +77,7 @@ export default class CommunityList extends Component<IProps, IState> {
           <Text style={{ color: "white" }}>Switch</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
