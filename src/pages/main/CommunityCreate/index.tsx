@@ -14,8 +14,8 @@ export default class CommunityCreate extends Component<IProps> {
         <Text>Community Create</Text>
         <Button
           type="primary"
-          onPress={() => this.props.navigation.navigate("Login")}>
-          Go To Login
+          onPress={() => this.props.navigation.navigate("DetailCommunity")}>
+          Go To Detail Community
         </Button>
       </View>
     )

@@ -16,12 +16,12 @@ interface IState {
 
 export default class CommunityList extends Component<IProps, IState> {
   static navigationOptions: NavigationStackScreenOptions = {
-    title: "Your Communities"
+    title: "Your Communities",
   }
 
   state = {
     communities: [] as Array<ICommunity>,
-    isCommunitiesEmpty: true
+    isCommunitiesEmpty: true,
   }
 
   public componentDidMount() {
@@ -60,7 +60,7 @@ export default class CommunityList extends Component<IProps, IState> {
             position: "absolute",
             bottom: 20,
             alignSelf: "center",
-            borderRadius: 5
+            borderRadius: 5,
           }}
         >
           <Text style={{ color: "white" }}>Switch</Text>
@@ -72,12 +72,12 @@ export default class CommunityList extends Component<IProps, IState> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
 
   isCommunityEmptyViewContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 })
