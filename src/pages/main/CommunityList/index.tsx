@@ -1,20 +1,30 @@
-import { Button, WhiteSpace } from "@ant-design/react-native"
-import React, { Component } from "react"
+import { Button, WhiteSpace } from "@ant-design/react-native";
+import React, { Component } from "react";
 
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
-import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation"
-import CommunityItem from "./CommunityItem"
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity
+} from "react-native";
+import {
+  NavigationScreenProp,
+  NavigationStackScreenOptions
+} from "react-navigation";
+import CommunityItem from "./CommunityItem";
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>
+  navigation: NavigationScreenProp<any, any>;
 }
 
 interface IState {
-  communities: Array<ICommunity>
+  communities: ICommunity[]
   isCommunitiesEmpty: boolean
 }
 
 export default class CommunityList extends Component<IProps, IState> {
+
   static navigationOptions: NavigationStackScreenOptions = {
     title: "Your Communities",
   }
@@ -25,7 +35,7 @@ export default class CommunityList extends Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    //TODO: Fetch community list
+    // TODO: Fetch community list
   }
 
   public render() {
@@ -52,7 +62,9 @@ export default class CommunityList extends Component<IProps, IState> {
         {/* TODO: Remove when fetch data is implemented */}
         <TouchableOpacity
           onPress={() =>
-            this.setState({ isCommunitiesEmpty: !this.state.isCommunitiesEmpty })
+            this.setState({
+              isCommunitiesEmpty: !this.state.isCommunitiesEmpty,
+            })
           }
           style={{
             backgroundColor: "rgb(31,144,230)",
@@ -66,7 +78,7 @@ export default class CommunityList extends Component<IProps, IState> {
           <Text style={{ color: "white" }}>Switch</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
