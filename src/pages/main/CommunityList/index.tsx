@@ -24,12 +24,13 @@ interface IState {
 }
 
 export default class CommunityList extends Component<IProps, IState> {
-  public static navigationOptions: NavigationStackScreenOptions = {
+
+  static navigationOptions: NavigationStackScreenOptions = {
     title: "Your Communities",
   }
 
-  public state = {
-    communities: [] as ICommunity[],
+  state = {
+    communities: [] as Array<ICommunity>,
     isCommunitiesEmpty: true,
   }
 
