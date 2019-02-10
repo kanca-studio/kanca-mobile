@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
-    alignSelf: 'stretch'
-  }
+    alignSelf: "stretch",
+  },
 })
