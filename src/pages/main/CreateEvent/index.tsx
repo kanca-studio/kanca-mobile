@@ -1,8 +1,13 @@
 import React, { Component } from "react"
-import { WingBlank } from "@ant-design/react-native"
+import { WingBlank, Button } from "@ant-design/react-native"
 import InputItem from "../../../components/InputItem"
+import { NavigationStackScreenOptions } from "react-navigation"
 
 export default class CreateEvent extends Component {
+  public static navigationOptions: NavigationStackScreenOptions = {
+    title: "Create Event",
+  }
+
   public render() {
     return (
       <WingBlank>
@@ -12,15 +17,14 @@ export default class CreateEvent extends Component {
           label="Location"
           placeholder="ex: the bros caffe and coworking space"
         />
-        <InputItem multiline label="Description" placeholder="" />
+        <InputItem
+          multiline
+          label="Description"
+          placeholder="enter event description"
+        />
+
+        <Button type="primary">Create Event</Button>
       </WingBlank>
     )
   }
-}
-
-const styles = {
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
 }
