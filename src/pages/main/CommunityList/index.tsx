@@ -1,21 +1,21 @@
-import { Button, WhiteSpace } from "@ant-design/react-native";
-import React, { Component } from "react";
+import { Button, WhiteSpace } from "@ant-design/react-native"
+import React, { Component } from "react"
 
 import {
   Text,
   View,
   StyleSheet,
   FlatList,
-  TouchableOpacity
-} from "react-native";
+  TouchableOpacity,
+} from "react-native"
 import {
   NavigationScreenProp,
-  NavigationStackScreenOptions
-} from "react-navigation";
-import CommunityItem from "./CommunityItem";
+  NavigationStackScreenOptions,
+} from "react-navigation"
+import CommunityItem from "./CommunityItem"
 
 interface IProps {
-  navigation: NavigationScreenProp<any, any>;
+  navigation: NavigationScreenProp<any, any>
 }
 
 interface IState {
@@ -24,18 +24,13 @@ interface IState {
 }
 
 export default class CommunityList extends Component<IProps, IState> {
-
-  static navigationOptions: NavigationStackScreenOptions = {
+  public static navigationOptions: NavigationStackScreenOptions = {
     title: "Your Communities",
   }
 
-  state = {
-    communities: [] as Array<ICommunity>,
+  public state = {
+    communities: [] as ICommunity[],
     isCommunitiesEmpty: true,
-  }
-
-  public componentDidMount() {
-    // TODO: Fetch community list
   }
 
   public render() {
@@ -51,12 +46,19 @@ export default class CommunityList extends Component<IProps, IState> {
             >
               Create a Community
             </Button>
+            <WhiteSpace />
+            <Button
+              type="primary"
+              onPress={() => this.props.navigation.navigate("DetailCommunity")}
+            >
+              Community Detail
+            </Button>
           </View>
         ) : (
           <FlatList
             data={["1", "2", "3"]}
             renderItem={() => <CommunityItem />}
-            keyExtractor={(_item, index) => index.toString()}
+            keyExtractor={(item, index) => index.toString()}
           />
         )}
         {/* TODO: Remove when fetch data is implemented */}
@@ -78,7 +80,7 @@ export default class CommunityList extends Component<IProps, IState> {
           <Text style={{ color: "white" }}>Switch</Text>
         </TouchableOpacity>
       </View>
-    );
+    )
   }
 }
 
