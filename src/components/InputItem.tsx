@@ -1,11 +1,5 @@
 import React, { Component, ReactElement, cloneElement } from "react"
-import {
-  TextInputProps,
-  StyleSheet,
-  View,
-  Text,
-  TextInput,
-} from "react-native"
+import { TextInputProps, StyleSheet, View, Text, TextInput } from "react-native"
 
 interface IProps extends TextInputProps {
   label?: string
@@ -61,11 +55,9 @@ export default class InputItem extends Component<IProps, IState> {
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
-    flexDirection: "row",
+    width: "100%",
+    minHeight: 50,
     marginBottom: 10,
-    alignSelf: "center",
-    alignItems: "center",
   },
   iconContainer: {
     height: 50,
@@ -75,18 +67,16 @@ const styles = StyleSheet.create({
   },
   labelContainer: {
     flex: 1,
-    height: 50,
     justifyContent: "center",
-    paddingHorizontal: 10,
+    paddingVertical: 10,
+    marginBottom: 10,
   },
   inputContainer: {
     flexDirection: "row",
     borderRadius: 5,
     borderWidth: 1,
-    flex: 1,
     paddingHorizontal: 10,
     height: 50,
-    justifyContent: "center",
   },
   input: {
     flex: 1,

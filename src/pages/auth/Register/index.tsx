@@ -1,12 +1,8 @@
-import {
-  Button,
-  WingBlank,
-  InputItem,
-  WhiteSpace,
-} from "@ant-design/react-native"
+import { Button, WingBlank, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
 import { Text, StyleSheet } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
+import InputItem from "../../../components/InputItem"
 
 interface IProps {
   navigation: NavigationScreenProp<any, any>
@@ -21,21 +17,10 @@ export default class Register extends Component<IProps> {
 
         <WhiteSpace size="xl" />
 
-        <InputItem type="text" placeholder="ex : student">
-          Role
-        </InputItem>
-
-        <InputItem type="text" placeholder="ex : indonesia">
-          Country
-        </InputItem>
-
-        <InputItem type="text" placeholder="ex : malang">
-          City
-        </InputItem>
-
-        <InputItem type="text" placeholder="ex : +628512345678">
-          Contact
-        </InputItem>
+        <InputItem label="Role" placeholder="ex : student" />
+        <InputItem label="Country" placeholder="ex : indonesia" />
+        <InputItem label="City" placeholder="ex : malang" />
+        <InputItem label="Contact" placeholder="ex : +628512345678" />
 
         <WhiteSpace size="xl" />
 
@@ -64,6 +49,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
-    alignSelf: 'stretch'
-  }
+    alignSelf: "stretch",
+  },
 })
