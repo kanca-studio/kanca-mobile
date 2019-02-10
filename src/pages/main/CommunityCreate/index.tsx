@@ -1,6 +1,7 @@
-import { Text, StyleSheet, ScrollView, View } from "react-native"
+import { StyleSheet, ScrollView } from "react-native"
 import { Button, WingBlank, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
+import PageTitle from "../../../components/PageTitle"
 import InputItem from "../../../components/InputItem"
 import {
   NavigationScreenProp,
@@ -20,11 +21,10 @@ export default class CommunityCreate extends Component<IProps> {
     return (
       <WingBlank style={styles.container}>
         <WhiteSpace size="md" />
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Create Your Community</Text>
-          <Text>Make the world better with your community</Text>
-        </View>
-
+        <PageTitle
+          title="Create Community"
+          description="Make the world better with your community"
+        />
         <WhiteSpace size="xl" />
         <ScrollView>
           <InputItem label="Name" placeholder="ex: devc malang" />

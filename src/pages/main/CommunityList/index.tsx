@@ -1,6 +1,5 @@
 import { Button, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
-
 import {
   Text,
   View,
@@ -28,8 +27,8 @@ export default class CommunityList extends Component<IProps, IState> {
     title: "Your Communities",
   }
 
-  public state = {
-    communities: [] as ICommunity[],
+  public state: IState = {
+    communities: [],
     isCommunitiesEmpty: true,
   }
 
@@ -46,19 +45,22 @@ export default class CommunityList extends Component<IProps, IState> {
             >
               Create a Community
             </Button>
-            <WhiteSpace />
-            <Button
-              type="primary"
-              onPress={() => this.props.navigation.navigate("DetailCommunity")}
-            >
-              Community Detail
-            </Button>
           </View>
         ) : (
           <FlatList
             data={["1", "2", "3"]}
-            renderItem={() => <CommunityItem />}
-            keyExtractor={(item, index) => index.toString()}
+            renderItem={() => (
+              <CommunityItem
+                name="Facebook Developer Circle: Malang"
+                location="Malang"
+                description="Welcome"
+                image={require("../../../../assets/FB.jpg")}
+                onPress={() =>
+                  this.props.navigation.navigate("DetailCommunity")
+                }
+              />
+            )}
+            keyExtractor={(index) => index.toString()}
           />
         )}
         {/* TODO: Remove when fetch data is implemented */}

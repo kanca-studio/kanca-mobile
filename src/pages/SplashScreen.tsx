@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View, Image } from "react-native"
+import { View, Image, StyleSheet } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
 
 import SplashImage from "../../assets/icon.png"
@@ -16,16 +16,18 @@ export default class SplashScreen extends Component<IProps> {
 
   public render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "white",
-        }}
-      >
+      <View style={styles.container}>
         <Image source={SplashImage} />
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+  },
+})

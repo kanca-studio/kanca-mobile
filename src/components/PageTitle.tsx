@@ -3,13 +3,13 @@ import { Text, StyleSheet, View } from "react-native"
 
 interface IProps {
   title: string
-  description: string
+  description?: string
 }
 
 export default class PageTitle extends Component<IProps> {
   public render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.title}>{this.props.title}</Text>
         <Text>{this.props.description}</Text>
       </View>
@@ -18,5 +18,11 @@ export default class PageTitle extends Component<IProps> {
 }
 
 const styles = StyleSheet.create({
-  title: { fontSize: 30 },
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 30,
+  },
 })

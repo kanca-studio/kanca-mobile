@@ -1,7 +1,8 @@
 import { Button, WingBlank, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
-import { Text, StyleSheet } from "react-native"
+import { StyleSheet } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
+import PageTitle from "../../../components/PageTitle"
 import InputItem from "../../../components/InputItem"
 
 interface IProps {
@@ -11,9 +12,11 @@ interface IProps {
 export default class Register extends Component<IProps> {
   public render() {
     return (
-      <WingBlank style={styles.wrapper}>
-        <Text style={styles.title}>Additional Info</Text>
-        <Text style={styles.description}>Let us know who you are</Text>
+      <WingBlank style={styles.container}>
+        <PageTitle
+          title="Additional Info"
+          description="Let us know who you are"
+        />
 
         <WhiteSpace size="xl" />
 
@@ -29,7 +32,7 @@ export default class Register extends Component<IProps> {
           type="primary"
           onPress={() => this.props.navigation.navigate("CommunityList")}
         >
-          Submit
+          Register
         </Button>
       </WingBlank>
     )
@@ -37,7 +40,7 @@ export default class Register extends Component<IProps> {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
