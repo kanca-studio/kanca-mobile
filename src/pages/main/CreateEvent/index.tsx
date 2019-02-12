@@ -1,9 +1,13 @@
 import React, { Component } from "react"
 import { WingBlank, Button } from "@ant-design/react-native"
 import InputItem from "../../../components/InputItem"
-import { NavigationStackScreenOptions } from "react-navigation"
+import { NavigationStackScreenOptions, NavigationScreenProp } from "react-navigation"
 
-export default class CreateEvent extends Component {
+interface IProps {
+  navigation: NavigationScreenProp<any, any>
+}
+
+export default class CreateEvent extends Component<IProps> {
   public static navigationOptions: NavigationStackScreenOptions = {
     title: "Create Event",
   }
@@ -23,7 +27,7 @@ export default class CreateEvent extends Component {
           placeholder="enter event description"
         />
 
-        <Button type="primary">Create Event</Button>
+        <Button type="primary" onPress={() => this.props.navigation.navigate("EventDetail")}>Create Event</Button>
       </WingBlank>
     )
   }
