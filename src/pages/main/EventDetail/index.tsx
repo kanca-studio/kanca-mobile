@@ -23,10 +23,10 @@ export default class EventDetail extends Component<IProps> {
         {/* <View style={styles.bannerContainer}> */}
         <ImageBackground source={require('../../../../assets/FB.jpg')} resizeMode={"cover"} style={styles.bannerContainer} />
           <View style={styles.text}>
-            <Text style={{ fontSize: 30 }}>Event Name</Text>
-            <Text style={{ fontSize: 20, color: "black" }}>Event Date</Text>
-            <Text style={{ fontSize: 15, color: "black" }}>Event Location</Text>
-            <Text style={{ marginTop: 20 }}>
+            <Text style={styles.textEventName}>Event Name</Text>
+            <Text style={styles.textEventDate}>Event Date</Text>
+            <Text style={styles.textEventLocation}>Event Location</Text>
+            <Text style={styles.textOrganized}>
               Organized by : Facebook Developer Circle Malang
             </Text> 
           </View>
@@ -35,11 +35,7 @@ export default class EventDetail extends Component<IProps> {
 
         <View style={styles.content}>
           <View
-            style={{
-              width: constants.DEVICE_WIDTH * 0.8,
-              alignSelf: "center",
-              top: 20
-            }}
+            style={styles.eventContent}
           >
             <Text>Event Description:</Text>
             <Text>
@@ -48,13 +44,9 @@ export default class EventDetail extends Component<IProps> {
               quis. Maecenas fringilla orci at lacinia luctus.
             </Text>
           </View>
-          <View style={{ margin: 30 }} />
+          <View style={styles.eventSpacing} />
           <Button
-            style={{
-              width: constants.DEVICE_WIDTH * 0.6,
-              alignSelf: "center",
-              marginTop: 20,
-            }}
+            style={styles.btnChecked}
             type="primary"
             onPress={() => this.setState({ attend: !this.state.attend })}
           >
@@ -62,11 +54,7 @@ export default class EventDetail extends Component<IProps> {
           </Button>
 
           <Button
-            style={{
-              width: constants.DEVICE_WIDTH * 0.6,
-              alignSelf: "center",
-              marginTop: 20,
-            }}
+            style={styles.btnChecked}
             type="ghost"
             onPress={() => this.setState({ absent: !this.state.absent })}
           >
@@ -118,5 +106,32 @@ const styles = StyleSheet.create({
     width: constants.DEVICE_WIDTH * 0.95,
     height: 200,
     opacity: 0.5,
+  },
+  textEventName: {
+    fontSize: 30,
+  },
+  textEventDate: {
+    fontSize: 20, 
+    color: "black",
+  },
+  textEventLocation: {
+    fontSize: 15, 
+    color: "black",
+  },
+  textOrganized: {
+    marginTop: 20,
+  },
+  eventContent: {
+    width: constants.DEVICE_WIDTH * 0.8,
+    alignSelf: "center",
+    top: 20,
+  },
+  eventSpacing: {
+    margin: 30
+  },
+  btnChecked: {
+    width: constants.DEVICE_WIDTH * 0.6,
+    alignSelf: "center",
+    marginTop: 20,
   },
 });
