@@ -40,6 +40,7 @@ interface IEvent {
   location: EventLocation
   name: string
   participants: User[]
+  poster: string
 }
 
 interface IUserContext {

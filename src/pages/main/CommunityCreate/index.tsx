@@ -2,6 +2,7 @@ import { Text, StyleSheet, ScrollView, View } from "react-native"
 import { Button, WingBlank, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
 import InputItem from "../../../components/InputItem"
+import ImagePicker from "../../../components/ImagePicker"
 import {
   NavigationScreenProp,
   NavigationStackScreenOptions,
@@ -27,6 +28,8 @@ export default class CommunityCreate extends Component<IProps> {
 
         <WhiteSpace size="xl" />
         <ScrollView>
+          <ImagePicker label="Pick Community Banner" />
+
           <InputItem label="Name" placeholder="ex: devc malang" />
           <InputItem
             multiline={true}
@@ -35,7 +38,6 @@ export default class CommunityCreate extends Component<IProps> {
           />
           <InputItem label="Country" placeholder="ex: indonesia" />
           <InputItem label="City" placeholder="ex: malang" />
-          <InputItem label="Banner" placeholder="your community banner" />
         </ScrollView>
         <WhiteSpace size="xl" />
 
