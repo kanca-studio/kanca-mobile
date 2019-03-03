@@ -10,8 +10,8 @@ import {
 } from "react-native"
 
 interface IProps {
-  title: String
-  description: String
+  title: string
+  description: string
   imageSource: ImageSourcePropType
 }
 
@@ -51,10 +51,12 @@ const styles = StyleSheet.create({
   title: {
     color: "#6080f9",
     fontSize: 36,
+    textAlign: "center",
   },
   description: {
     color: "#545454",
     fontSize: 20,
+    textAlign: "center",
   },
   image: {
     flex: 1,

@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { Text, StyleSheet } from "react-native"
 import { NavigationScreenProp } from "react-navigation"
 import InputItem from "../../../components/InputItem"
+import PageTitle from "../../../components/PageTitle"
 
 interface IProps {
   navigation: NavigationScreenProp<any, any>
@@ -11,9 +12,11 @@ interface IProps {
 export default class Register extends Component<IProps> {
   public render() {
     return (
-      <WingBlank style={styles.wrapper}>
-        <Text style={styles.title}>Additional Info</Text>
-        <Text style={styles.description}>Let us know who you are</Text>
+      <WingBlank style={styles.container}>
+        <PageTitle
+          title="Additional Info"
+          description="Let us know who you are"
+        />
 
         <WhiteSpace size="xl" />
 
@@ -37,16 +40,10 @@ export default class Register extends Component<IProps> {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  title: {
-    fontSize: 30,
-  },
-  description: {
-    fontSize: 18,
   },
   button: {
     alignSelf: "stretch",

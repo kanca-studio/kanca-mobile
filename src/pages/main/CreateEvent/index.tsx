@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { WingBlank, Button, WhiteSpace } from "@ant-design/react-native"
 import InputItem from "../../../components/InputItem"
 import ImagePicker from "../../../components/ImagePicker"
+import PageTitle from "../../../components/PageTitle"
 import { NavigationStackScreenOptions } from "react-navigation"
 import { StyleSheet, ScrollView } from "react-native"
 
@@ -13,6 +14,12 @@ export default class CreateEvent extends Component {
   public render() {
     return (
       <WingBlank style={styles.container}>
+        <WhiteSpace size="md" />
+        <PageTitle
+          title="Create Event"
+          description="Create your event and meet other developer"
+        />
+
         <WhiteSpace size="xl" />
         <ScrollView>
           <ImagePicker label="Pick Event Poster" />
