@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
   isCommunityEmptyViewContainer: {
     flex: 1,
     justifyContent: "center",

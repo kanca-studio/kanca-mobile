@@ -3,6 +3,7 @@ import { Button, WingBlank, WhiteSpace } from "@ant-design/react-native"
 import React, { Component } from "react"
 import InputItem from "../../../components/InputItem"
 import ImagePicker from "../../../components/ImagePicker"
+import PageTitle from "../../../components/PageTitle"
 import {
   NavigationScreenProp,
   NavigationStackScreenOptions,
@@ -21,10 +22,10 @@ export default class CommunityCreate extends Component<IProps> {
     return (
       <WingBlank style={styles.container}>
         <WhiteSpace size="md" />
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Create Your Community</Text>
-          <Text>Make the world better with your community</Text>
-        </View>
+        <PageTitle
+          title="Create Your Community"
+          description="Make the world better with your community"
+        />
 
         <WhiteSpace size="xl" />
         <ScrollView>
@@ -57,12 +58,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-  },
-  titleContainer: {
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 30,
   },
   button: {
     alignSelf: "stretch",

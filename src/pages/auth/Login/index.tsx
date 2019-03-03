@@ -48,7 +48,7 @@ class Login extends Component<IProps, IState> {
     return (
       <UserContext.Consumer>
         {(context) => (
-          <View style={styles.wrapper}>
+          <View style={styles.container}>
             <Image source={Logo} resizeMode="contain" style={styles.logo} />
             <View style={styles.form}>
               <InputItem
@@ -81,7 +81,7 @@ class Login extends Component<IProps, IState> {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
+  container: {
     justifyContent: "center",
     flex: 1,
   },
