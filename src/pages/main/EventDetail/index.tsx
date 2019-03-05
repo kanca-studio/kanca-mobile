@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet,ImageBackground } from "react-native";
-import { Button } from "@ant-design/react-native";
+import { Button, WhiteSpace } from "@ant-design/react-native";
 import { NavigationScreenProp, NavigationStackScreenOptions } from "react-navigation";
 import constants from "../../../config/constants";
 
@@ -44,7 +44,7 @@ export default class EventDetail extends Component<IProps> {
               quis. Maecenas fringilla orci at lacinia luctus.
             </Text>
           </View>
-          <View style={styles.eventSpacing} />
+          <WhiteSpace />
           <Button
             style={styles.btnChecked}
             type="primary"
@@ -125,9 +125,6 @@ const styles = StyleSheet.create({
     width: constants.DEVICE_WIDTH * 0.8,
     alignSelf: "center",
     top: 20,
-  },
-  eventSpacing: {
-    margin: 30
   },
   btnChecked: {
     width: constants.DEVICE_WIDTH * 0.6,
