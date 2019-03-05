@@ -5,7 +5,11 @@ import ImagePicker from "../../../components/ImagePicker"
 import { NavigationStackScreenOptions } from "react-navigation"
 import { StyleSheet, ScrollView } from "react-native"
 
-export default class CreateEvent extends Component {
+interface IProps {
+  navigation: NavigationScreenProp<any, any>
+}
+
+export default class CreateEvent extends Component<IProps> {
   public static navigationOptions: NavigationStackScreenOptions = {
     title: "Create Event",
   }
